@@ -4,8 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.jonasrosendo.mvvmanimals.R
 import com.jonasrosendo.mvvmanimals.model.model.Animal
+import com.jonasrosendo.mvvmanimals.util.getProgressDrawable
+import com.jonasrosendo.mvvmanimals.util.loadImage
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.adapter_animals.view.*
 
@@ -20,9 +23,10 @@ class AnimalAdapter(private val animals : ArrayList<Animal>) : RecyclerView.Adap
     override fun getItemCount() = animals.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         val animal = animals[position]
+
         holder.containerView?.tvAnimalName?.text = animal.name
+        holder.containerView?.ivAnimalPhoto?.loadImage(animal.image, getProgressDrawable(holder.containerView.context))
     }
 
     fun update(newAnimalList : List<Animal>){

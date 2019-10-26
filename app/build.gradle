@@ -37,6 +37,7 @@ def rxJavaVersion = '2.1.1'
 def navVersion = '2.2.0-beta01'
 def daggerVersion = '2.14.1'
 def mockitoVersion = '2.11.0'
+def preferencesVersion = '1.1.0'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -79,4 +80,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //preferences
+    implementation "androidx.preference:preference:$preferencesVersion"
 }

@@ -64,7 +64,7 @@ class AnimalListFragment : Fragment() {
             rvAnimals.visibility = View.GONE
             tvErrorMessage.visibility = View.GONE
             pbAnimalsList.visibility = View.VISIBLE
-            viewModel.refresh()
+            viewModel.hardRefresh()
             swipeRefreshAnimals.isRefreshing = false
         }
     }
