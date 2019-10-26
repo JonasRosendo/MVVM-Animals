@@ -6,10 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 
 import com.jonasrosendo.mvvmanimals.R
-import kotlinx.android.synthetic.main.fragment_animal_detail.*
 
 class AnimalDetailFragment : Fragment() {
 
@@ -25,11 +23,5 @@ class AnimalDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        fabList.setOnClickListener {
-            val action = AnimalDetailFragmentDirections.actionAnimalDetailFragmentToAnimalListFragment()
-            Navigation.findNavController(it).navigate(action)
-        }
     }
-
-
 }
